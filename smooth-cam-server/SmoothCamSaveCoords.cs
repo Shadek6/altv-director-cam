@@ -6,26 +6,14 @@ using MongoDB;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
-struct PlayerPosition {
-    public double x;
-    public double y;
-    public double z;
-}
-
-struct PlayerRotation {
-    public double x;
-    public double y;
-    public double z;
-}
-
-namespace ExampleProject
+namespace SmoothCamSaveCoords
 {
-    internal class ExampleResource : Resource
+    internal class SmoothCamSaveCoords : Resource
     {
         public override void OnStart()
         {
             Console.WriteLine("Started");
-            Alt.OnPlayerCustomEvent += (player, eventName, args) => HandleSaveCoords(player, args);
+            Alt.OnPlayerCustomEvent += (player, eventName, args) => HandleSaveCoords(player, eventName, args);
         }
 
         public override void OnStop() 
@@ -33,7 +21,8 @@ namespace ExampleProject
             Console.WriteLine("Stopped");
         }
 
-        private void HandleSaveCoords(IPlayer player, AltV.Net.Elements.Args.MValueConst[] args) {
+        private void HandleSaveCoords(IPlayer player, string eventName, AltV.Net.Elements.Args.MValueConst[] args) {
+            if(eventName != "SmoothDirectorCam:SaveCameraPosition") return;
 
             string[] PlayerPosition = (args[0].GetDictionary().GetValueOrDefault("position").ToString())[15..].Split(",");
             string[] PlayerRotation = (args[0].GetDictionary().GetValueOrDefault("rotation").ToString())[15..].Split(",");

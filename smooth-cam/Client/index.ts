@@ -10,9 +10,9 @@ class SmoothDirectorCam {
     public static Init() {
         Alt.on("SmoothDirectorCam:SavedCoords", () => console.log("Saved Coords to Database!"));
         Alt.on("keydown", (key: number) => {
-            if (key === 0x4e) this.toggleNoClip(); // Key: N
-            if (key === 0x48 && this.noClip === true) this.GetCameraPosition(); // Key: H
-            if (key === 0x4f && this.WorldPositions.length > 0 && this.WorldPositions.length <= 10) this.StartCameraMovement(); // Key: O
+            if (key === Alt.KeyCode.N) this.toggleNoClip();
+            if (key === Alt.KeyCode.H && this.noClip === true) this.GetCameraPosition();
+            if (key === Alt.KeyCode.O && this.WorldPositions.length > 0 && this.WorldPositions.length <= 10) this.StartCameraMovement();
 
             if (this.noClip === true) this.noClipUpdate(key);
         });
@@ -44,8 +44,7 @@ class SmoothDirectorCam {
         const camSpeedForward = 10;
         const camSpeed = camSpeedForward / 4;
 
-        if (key === 0x57) {
-            // Key: W
+        if (key === Alt.KeyCode.W) {
             const forwardVector = Native.getEntityForwardVector(this.playerPed);
             Native.setEntityCoordsNoOffset(
                 this.playerPed,
@@ -58,8 +57,7 @@ class SmoothDirectorCam {
             );
         }
 
-        if (key === 0x53) {
-            // Key: S
+        if (key === Alt.KeyCode.S) {
             const forwardVector = Native.getEntityForwardVector(this.playerPed);
             Native.setEntityCoordsNoOffset(
                 this.playerPed,
@@ -72,8 +70,7 @@ class SmoothDirectorCam {
             );
         }
 
-        if (key === 0x41) {
-            // Key: A
+        if (key === Alt.KeyCode.A) {
             const forwardVector = Native.getEntityForwardVector(this.playerPed);
             Native.setEntityCoordsNoOffset(
                 this.playerPed,
@@ -86,8 +83,7 @@ class SmoothDirectorCam {
             );
         }
 
-        if (key === 0x44) {
-            // Key: D
+        if (key === Alt.KeyCode.D) {
             const forwardVector = Native.getEntityForwardVector(this.playerPed);
             Native.setEntityCoordsNoOffset(
                 this.playerPed,
@@ -100,13 +96,11 @@ class SmoothDirectorCam {
             );
         }
 
-        if (key === 0x45) {
-            // Key: E
+        if (key === Alt.KeyCode.E) {
             Native.setEntityCoordsNoOffset(this.playerPed, Alt.Player.local.pos.x, Alt.Player.local.pos.y, Alt.Player.local.pos.z + 1, true, true, true);
         }
 
-        if (key === 0x51) {
-            // Key: Q
+        if (key === Alt.KeyCode.Q) {
             Native.setEntityCoordsNoOffset(this.playerPed, Alt.Player.local.pos.x, Alt.Player.local.pos.y, Alt.Player.local.pos.z - 1, true, true, true);
         }
     }
