@@ -1,0 +1,10 @@
+type = "js"
+main = "dist/Server/index.js"
+client-main = "dist/Client/index.js"
+client-files = [
+    "dist/Client/*",
+    "dist/Server/*"
+]
+deps = [ 
+    "chat"
+]

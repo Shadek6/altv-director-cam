@@ -1,0 +1,5 @@
+E:\AltV Server\resources\smooth-cam-server\obj\Debug\net8.0\smooth-cam-server.csproj.AssemblyReference.cache
+E:\AltV Server\resources\smooth-cam-server\obj\Debug\net8.0\smooth-cam-server.GeneratedMSBuildEditorConfig.editorconfig
+E:\AltV Server\resources\smooth-cam-server\obj\Debug\net8.0\smooth-cam-server.AssemblyInfoInputs.cache
+E:\AltV Server\resources\smooth-cam-server\obj\Debug\net8.0\smooth-cam-server.AssemblyInfo.cs
+E:\AltV Server\resources\smooth-cam-server\obj\Debug\net8.0\smooth-cam-server.csproj.CoreCompileInputs.cache

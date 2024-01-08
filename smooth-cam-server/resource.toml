@@ -1,0 +1,2 @@
+type = "csharp"
+main = "bin/Debug/net6.0/smooth-cam-server.dll"
